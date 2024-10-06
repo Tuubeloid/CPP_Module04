@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvalimak <tvalimak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/04 08:53:31 by tvalimak          #+#    #+#             */
-/*   Updated: 2024/10/06 19:52:31 by tvalimak         ###   ########.fr       */
+/*   Created: 2024/10/04 08:51:32 by tvalimak          #+#    #+#             */
+/*   Updated: 2024/10/04 08:51:39 by tvalimak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGCAT_HPP
-#define WRONGCAT_HPP
+#include "Cat.hpp"
 
-#include "WrongAnimal.hpp"
+Cat::Cat() {
+    type = "Cat";
+    std::cout << "Cat constructor called!" << std::endl;
+}
 
-class WrongCat : public WrongAnimal {
-public:
-    WrongCat();
-    WrongCat(const WrongCat& other);  // Copy Constructor
-    WrongCat& operator=(const WrongCat &other);  // Assignment Operator
-    ~WrongCat();
+Cat::~Cat() {
+    std::cout << "Cat destructor called!" << std::endl;
+}
 
-    void makeSound() const;  // Not virtual, so WrongAnimal's makeSound will be called
-    WrongCat(std::string type);
-};
-
-#endif
+void Cat::makeSound() const {
+    std::cout << "Meow Meow!" << std::endl;
+}

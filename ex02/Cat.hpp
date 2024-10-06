@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvalimak <tvalimak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/04 08:52:54 by tvalimak          #+#    #+#             */
-/*   Updated: 2024/10/06 19:44:24 by tvalimak         ###   ########.fr       */
+/*   Created: 2024/10/04 08:51:20 by tvalimak          #+#    #+#             */
+/*   Updated: 2024/10/06 18:02:09 by tvalimak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-#define WRONGANIMAL_HPP
+#ifndef CAT_HPP
+#define CAT_HPP
 
-#include <iostream>
-#include <string>
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-class WrongAnimal {
-protected:
-    std::string type;
+class Cat : public AAnimal
+{
+private:
+    Brain* brain;
 
 public:
-    WrongAnimal(); // Constructor
-    WrongAnimal(const WrongAnimal& other);  // Copy Constructor
-    WrongAnimal& operator=(const WrongAnimal& other);  // Assignment Operator
-    ~WrongAnimal(); // Destructor
+    Cat();
+    Cat(const Cat& other);
+    Cat& operator=(const Cat& other);
+    virtual ~Cat();
 
-    std::string getType() const;
-    void makeSound() const;  // Not virtual
+    virtual void makeSound() const;
 };
 
 #endif

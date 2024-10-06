@@ -6,7 +6,7 @@
 #    By: tvalimak <tvalimak@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/04 08:56:45 by tvalimak          #+#    #+#              #
-#    Updated: 2024/10/06 18:07:43 by tvalimak         ###   ########.fr        #
+#    Updated: 2024/10/06 18:01:36 by tvalimak         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = animals
 
-SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
+SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

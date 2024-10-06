@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvalimak <tvalimak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/04 08:52:54 by tvalimak          #+#    #+#             */
-/*   Updated: 2024/10/06 19:44:24 by tvalimak         ###   ########.fr       */
+/*   Created: 2024/10/04 09:44:16 by tvalimak          #+#    #+#             */
+/*   Updated: 2024/10/04 09:44:21 by tvalimak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-#define WRONGANIMAL_HPP
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
 #include <iostream>
 #include <string>
 
-class WrongAnimal {
-protected:
-    std::string type;
+class Brain {
+private:
+    std::string ideas[100]; // Array of 100 strings representing ideas
 
 public:
-    WrongAnimal(); // Constructor
-    WrongAnimal(const WrongAnimal& other);  // Copy Constructor
-    WrongAnimal& operator=(const WrongAnimal& other);  // Assignment Operator
-    ~WrongAnimal(); // Destructor
+    Brain();  // Constructor
+    Brain(const Brain& other); // Copy constructor
+    Brain& operator=(const Brain& other); // Assignment operator
+    ~Brain(); // Destructor
 
-    std::string getType() const;
-    void makeSound() const;  // Not virtual
+    void setIdea(int index, const std::string& idea);
+    std::string getIdea(int index) const;
 };
 
 #endif

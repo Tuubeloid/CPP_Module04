@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvalimak <tvalimak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/04 08:53:31 by tvalimak          #+#    #+#             */
-/*   Updated: 2024/10/06 19:52:31 by tvalimak         ###   ########.fr       */
+/*   Created: 2024/10/04 08:34:17 by tvalimak          #+#    #+#             */
+/*   Updated: 2024/10/06 18:03:19 by tvalimak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGCAT_HPP
-#define WRONGCAT_HPP
+#include "Animal.hpp"
 
-#include "WrongAnimal.hpp"
+AAnimal::AAnimal() : type("Animal") {
+    std::cout << "Abstract Animal constructor called!" << std::endl;
+}
 
-class WrongCat : public WrongAnimal {
-public:
-    WrongCat();
-    WrongCat(const WrongCat& other);  // Copy Constructor
-    WrongCat& operator=(const WrongCat &other);  // Assignment Operator
-    ~WrongCat();
+AAnimal::~AAnimal() {
+    std::cout << "Abstract Animal destructor called!" << std::endl;
+}
 
-    void makeSound() const;  // Not virtual, so WrongAnimal's makeSound will be called
-    WrongCat(std::string type);
-};
+std::string AAnimal::getType() const {
+    return type;
+}
 
-#endif
+void AAnimal::makeSound() const {
+    std::cout << "Abstract Animal makes a sound!" << std::endl;
+}

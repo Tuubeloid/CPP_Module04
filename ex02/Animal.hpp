@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvalimak <tvalimak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/04 08:52:54 by tvalimak          #+#    #+#             */
-/*   Updated: 2024/10/06 19:44:24 by tvalimak         ###   ########.fr       */
+/*   Created: 2024/10/04 08:34:20 by tvalimak          #+#    #+#             */
+/*   Updated: 2024/10/06 17:57:17 by tvalimak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-#define WRONGANIMAL_HPP
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
 #include <iostream>
 #include <string>
 
-class WrongAnimal {
+class AAnimal {
 protected:
     std::string type;
 
 public:
-    WrongAnimal(); // Constructor
-    WrongAnimal(const WrongAnimal& other);  // Copy Constructor
-    WrongAnimal& operator=(const WrongAnimal& other);  // Assignment Operator
-    ~WrongAnimal(); // Destructor
+    AAnimal();  // Constructor
+    virtual ~AAnimal();  // Virtual Destructor
 
-    std::string getType() const;
-    void makeSound() const;  // Not virtual
+    std::string getType() const;  // Getter for type
+    virtual void makeSound() const=0;  // Virtual function for polymorphism
 };
 
 #endif
