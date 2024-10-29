@@ -6,16 +6,16 @@
 #    By: tvalimak <tvalimak@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/04 08:56:45 by tvalimak          #+#    #+#              #
-#    Updated: 2024/10/06 18:01:36 by tvalimak         ###   ########.fr        #
+#    Updated: 2024/10/29 22:15:15 by tvalimak         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 C = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = animals
+NAME = abstract_animals
 
-SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp
+SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

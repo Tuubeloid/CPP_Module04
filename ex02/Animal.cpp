@@ -6,24 +6,36 @@
 /*   By: tvalimak <tvalimak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 08:34:17 by tvalimak          #+#    #+#             */
-/*   Updated: 2024/10/06 18:03:19 by tvalimak         ###   ########.fr       */
+/*   Updated: 2024/10/29 19:54:38 by tvalimak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-AAnimal::AAnimal() : type("Animal") {
-    std::cout << "Abstract Animal constructor called!" << std::endl;
+Animal::Animal() : type("Animal") {
+    std::cout << "Animal constructor called!" << std::endl;
 }
 
-AAnimal::~AAnimal() {
-    std::cout << "Abstract Animal destructor called!" << std::endl;
+Animal::Animal(const Animal& other) : type(other.type) {
+    std::cout << "Animal copy constructor called!" << std::endl;
 }
 
-std::string AAnimal::getType() const {
+Animal& Animal::operator=(const Animal& other) {
+    if (this != &other) {
+        this->type = other.type;
+    }
+    std::cout << "Animal assignment operator called!" << std::endl;
+    return *this;
+}
+
+Animal::~Animal() {
+    std::cout << "Animal destructor called!" << std::endl;
+}
+
+std::string Animal::getType() const {
     return type;
 }
 
-void AAnimal::makeSound() const {
-    std::cout << "Abstract Animal makes a sound!" << std::endl;
+void Animal::makeSound() const {
+    std::cout << "Animal makes a sound!" << std::endl;
 }

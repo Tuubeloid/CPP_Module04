@@ -6,7 +6,7 @@
 /*   By: tvalimak <tvalimak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 08:56:31 by tvalimak          #+#    #+#             */
-/*   Updated: 2024/10/29 20:41:50 by tvalimak         ###   ########.fr       */
+/*   Updated: 2024/10/29 22:27:15 by tvalimak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,41 @@ int main() {
     for (j = 0; j < i; j++) {
         delete animals[j];
     }
+
+    unsigned int index = 0;
+
+    Dog *dog = new Dog();
+    Cat *cat = new Cat();
+
+    dog->setIdeas("Dog idea", index);
+    cat->setIdeas("Cat idea", index);
+
+    std::cout << dog->getType() << " idea: at index" << index << ", " << dog->getIdea(index) << std::endl;
+    std::cout << cat->getType() << " idea: at index" << index << ", " << cat->getIdea(index) << std::endl;
+
+    index = 63;
+
+    dog->setIdeas("Dog idea 63", index);
+    cat->setIdeas("Cat idea 63", index);
+
+    std::cout << dog->getType() << " idea: at index" << index << ", " << dog->getIdea(index) << std::endl;
+    std::cout << cat->getType() << " idea: at index" << index << ", " << cat->getIdea(index) << std::endl;
+
+    Dog *dog2 = new Dog(*dog);
+    Dog *dog3 = new Dog();
+    *dog3 = *dog2;
+
+    Cat *cat2 = new Cat(*cat);
+    Cat *cat3 = new Cat();
+    *cat3 = *cat2;
+
+    delete dog;
+    delete cat;
+    delete dog2;
+    delete dog3;
+    delete cat2;
+    delete cat3;
+    return 0;
 
     return 0;
 }
