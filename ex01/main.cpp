@@ -6,27 +6,33 @@
 /*   By: tvalimak <tvalimak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 08:56:31 by tvalimak          #+#    #+#             */
-/*   Updated: 2024/10/04 09:46:09 by tvalimak         ###   ########.fr       */
+/*   Updated: 2024/10/29 20:41:50 by tvalimak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 
 int main() {
-    const Animal* animals[10];
+    const unsigned int  i = 8;
+    const Animal* animals[i];
+    unsigned int j = 0;
 
-    // Fill half with Dog and the other half with Cat
-    for (int i = 0; i < 5; ++i) {
-        animals[i] = new Dog();
-    }
-    for (int i = 5; i < 10; ++i) {
-        animals[i] = new Cat();
+    for (j = 0; j < i; j++) {
+        if (j % 2 == 0) {
+            animals[j] = new Dog();
+        } else {
+            animals[j] = new Cat();
+        }
     }
 
-    // Deleting the animals
-    for (int i = 0; i < 10; ++i) {
-        delete animals[i]; // Calls the appropriate destructor
+    for (j = 0; j < i; j++) {
+        animals[j]->makeSound();
+    }
+
+    for (j = 0; j < i; j++) {
+        delete animals[j];
     }
 
     return 0;
