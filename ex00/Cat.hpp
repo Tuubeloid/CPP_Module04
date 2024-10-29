@@ -6,23 +6,24 @@
 /*   By: tvalimak <tvalimak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 08:51:20 by tvalimak          #+#    #+#             */
-/*   Updated: 2024/10/06 19:42:00 by tvalimak         ###   ########.fr       */
+/*   Updated: 2024/10/29 18:52:43 by tvalimak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_HPP
-#define CAT_HPP
+# define CAT_HPP
 
-#include "Animal.hpp"
+# include "Animal.hpp"
 
 class Cat : public Animal {
 public:
     Cat();  // Constructor
+    Cat(std::string type);  // Constructor with type
     Cat(const Cat& other);  // Copy Constructor
     Cat& operator=(const Cat& other);  // Assignment Operator
-    virtual ~Cat();  // Destructor
+    ~Cat();  // Destructor
 
-    virtual void makeSound() const;  // Override makeSound function
+    void makeSound() const;  // Override makeSound function
 };
 
 #endif
