@@ -6,7 +6,7 @@
 /*   By: tvalimak <tvalimak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 08:56:31 by tvalimak          #+#    #+#             */
-/*   Updated: 2024/10/29 22:30:42 by tvalimak         ###   ########.fr       */
+/*   Updated: 2024/10/29 22:32:04 by tvalimak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,5 @@ int main() {
     delete dog3;
     delete cat2;
     delete cat3;
-    return 0;
-
     return 0;
 }
